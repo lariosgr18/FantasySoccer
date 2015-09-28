@@ -23,8 +23,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button" />
+            android:text="To Second Activity"
+            android:id="@+id/toActivity2" />
     </LinearLayout>
 
     <LinearLayout
@@ -69,4 +69,5 @@
             android:layout_weight="0.33" />
 
     </LinearLayout>
+
 </LinearLayout>
