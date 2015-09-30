@@ -59,7 +59,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         checkField = (TextView) findViewById(R.id.Check);
         positionField = (EditText) findViewById(R.id.PositionField);
         ratingField = (EditText) findViewById(R.id.RatingField);
-        removeText = (EditText) findViewById(R.id.RemovedText);
+        removeText = (TextView) findViewById(R.id.RemovedText);
 
 
         //setting onClickListeners
