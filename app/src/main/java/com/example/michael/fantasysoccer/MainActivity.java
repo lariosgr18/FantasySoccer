@@ -23,6 +23,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     String lastName;
     int playerNum;
     String teamName;
+    String position;
+    int rating;
+    boolean addBoolean;
 
     private Button nextButton;
     private Button addPlayerButton;
@@ -31,8 +34,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private EditText lNameField;
     private EditText playerNumberField;
     private EditText teamNameField;
-    private EditText checkField;
-    private TextView fName;
+    private TextView checkField;
+    private EditText positionField;
+    private EditText ratingField;
+    private TextView removeText;
 
 
 
@@ -46,12 +51,15 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         addPlayerButton = (Button) findViewById(R.id.AddPlayer);
         removeButton = (Button) findViewById(R.id.RemoveButton);
 
-        //creates text views and edit views
+        //creates  edit views and text views
         fNameField = (EditText) findViewById(R.id.firstNameField);
         lNameField = (EditText) findViewById(R.id.lastNameField);
         playerNumberField = (EditText) findViewById(R.id.playerNumberField);
         teamNameField = (EditText) findViewById(R.id.TeamField);
-        checkField = (EditText) findViewById(R.id.Check);
+        checkField = (TextView) findViewById(R.id.Check);
+        positionField = (EditText) findViewById(R.id.PositionField);
+        ratingField = (EditText) findViewById(R.id.RatingField);
+        removeText = (EditText) findViewById(R.id.RemovedText);
 
 
         //setting onClickListeners
@@ -93,29 +101,38 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         }
 
         if (v == addPlayerButton){
+            //get the inputs from the text fields
             firstName = fNameField.getText().toString();
             lastName = lNameField.getText().toString();
             playerNum = Integer.parseInt(playerNumberField.getText().toString().trim());
             teamName = teamNameField.getText().toString();
+            position = positionField.getText().toString();
+            rating = Integer.parseInt(ratingField.getText().toString().trim());
 
-            base.addPlayer(firstName, lastName, playerNum, teamName);
+
+            addBoolean = base.addPlayer(firstName, lastName, playerNum, teamName, position, rating);
 
             player1 = base.getPlayer(firstName, lastName);
 
 
-            checkField.setText(player1.getLastName());
+              if ( addBoolean) {
+
+                  checkField.append(player1.toString());
+              }
 
 
         }
 
         if( v == removeButton){
-
+           //calls removePlayer
             firstName = fNameField.getText().toString();
             lastName = lNameField.getText().toString();
             playerNum = Integer.parseInt(playerNumberField.getText().toString().trim());
             teamName = teamNameField.getText().toString();
-            base.removePlayer(firstName, lastName);
-
+            addBoolean= base.removePlayer(firstName, lastName);
+          if(addBoolean){
+              removeText.append(player1.toString());
+          }
         }
     }
 

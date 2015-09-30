@@ -12,7 +12,7 @@ import java.util.Hashtable;
 public class PlayerDataBase {
     protected Hashtable<String, Player> playerNames = new Hashtable();
 
-    public boolean addPlayer(String firstName, String lastName, int playerNumber, String teamName) {
+    public boolean addPlayer(String firstName, String lastName, int playerNumber, String teamName, String position, int rate) {
 
 
         if (playerNames.containsKey(playerToKey(firstName, lastName))) {
@@ -21,7 +21,7 @@ public class PlayerDataBase {
 
 
         //Player is not in database, so add them
-        Player player = new Player(firstName, lastName, playerNumber, teamName);
+        Player player = new Player(firstName, lastName, playerNumber, teamName, position, rate);
         playerNames.put(playerToKey(firstName, lastName), player);
 
         return true;
