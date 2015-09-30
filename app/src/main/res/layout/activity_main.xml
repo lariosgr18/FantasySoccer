@@ -25,49 +25,81 @@
             android:layout_height="wrap_content"
             android:text="To Second Activity"
             android:id="@+id/toActivity2" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Player"
+            android:id="@+id/AddPlayer" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="495dp"
+        android:layout_width="934dp"
         android:layout_height="wrap_content"
         android:weightSum="1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Full Name"
-            android:id="@+id/nameText" />
+            android:text="First Name"
+            android:id="@+id/firstName" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText"
-            android:layout_weight="0.07" />
+            android:id="@+id/firstNameField"
+            android:layout_weight="0.23" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Name"
+            android:id="@+id/lastName" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lastNameField"
+            android:layout_weight="0.15" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Player Number"
-            android:id="@+id/textView2" />
+            android:id="@+id/PlayerNumber" />
 
         <EditText
             android:layout_width="49dp"
             android:layout_height="wrap_content"
-            android:id="@+id/editText2" />
+            android:id="@+id/playerNumberField" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Team"
-            android:id="@+id/textView3" />
+            android:id="@+id/Team" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText3"
-            android:layout_weight="0.33" />
+            android:id="@+id/TeamField"
+            android:layout_weight="0.35" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.21"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="8dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Check"
+            android:layout_weight="0.12" />
     </LinearLayout>
 
 </LinearLayout>
