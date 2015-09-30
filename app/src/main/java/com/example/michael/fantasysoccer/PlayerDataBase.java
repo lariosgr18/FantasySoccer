@@ -28,6 +28,7 @@ public class PlayerDataBase {
     }
 
     public boolean removePlayer(String firstName, String lastName) {
+
         if (playerNames.containsKey(playerToKey(firstName, lastName))) {
             playerNames.remove(playerToKey(firstName, lastName));
             return true;

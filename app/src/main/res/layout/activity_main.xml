@@ -31,6 +31,12 @@
             android:layout_height="wrap_content"
             android:text="Add Player"
             android:id="@+id/AddPlayer" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remove Player"
+            android:id="@+id/RemoveButton" />
     </LinearLayout>
 
     <LinearLayout

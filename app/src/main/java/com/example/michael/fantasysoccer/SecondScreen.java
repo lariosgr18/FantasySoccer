@@ -1,16 +1,28 @@
 package com.example.michael.fantasysoccer;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
-public class SecondScreen extends AppCompatActivity {
+public class SecondScreen extends AppCompatActivity implements  View.OnClickListener , View.OnTouchListener {
 
+    private Button returnButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_screen);
+        //creates buttons
+        returnButton = (Button) findViewById(R.id.ReturnButton);
+
+        //Set listeners
+        returnButton.setOnClickListener(this);
     }
 
     @Override
@@ -33,5 +45,18 @@ public class SecondScreen extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v == returnButton) {
+
+            finish();
+        }
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return false;
     }
 }
